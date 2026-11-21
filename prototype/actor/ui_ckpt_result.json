@@ -1,0 +1,5 @@
+{
+  "top1": 1.0,
+  "ckpt": "ui_hard_model.pt",
+  "epochs": 25
+}

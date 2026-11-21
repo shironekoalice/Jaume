@@ -1,0 +1,92 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Training artifacts (weights go to ModelScope, not git)
+output/
+*.bin
+*.pt
+*.safetensors
+*.ckpt
+
+# Checkpoint directories: the tokenizers and configs inside them belong to the
+# weights, which are hosted on ModelScope. Keep the code, not the checkpoints.
+350m-*/
+_stage/
+
+# Data (datasets are hosted on ModelScope; keep them out of git)
+data/
+det_train_100k.pkl
+*.parquet
+
+# Logs
+logs/
+*.log
+
+# Paper build artifacts (regenerate with docs/paper/render.py)
+docs/paper/mathjax.js
+docs/paper/paper.html
+docs/paper/_shot.html
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.bak
+*~
+
+# NPU artifacts
+ge_check_op.json
+fusion_result.json
+extra-info/
+
+# Secrets -- NEVER commit
+.deepseek_key.json
+*.local.yaml
+free-nodes.yaml
+# (the pattern above matches at any depth; tools/archive/free-nodes.yaml was
+#  committed before the rule existed, so it also needs an explicit entry)
+tools/archive/free-nodes.yaml
+
+# Local ModelScope download cache
+.mscache/
+
+# --- Actor prototype (prototype/actor/) ---
+# Model weights: re-fetch with `python prototype/actor/fetch_models.py`
+# (they come from ModelScope because HuggingFace is unreachable from this host)
+prototype/actor/models/
+# Datasets: ScreenSpot / seeclick parquets, re-fetchable from ModelScope
+prototype/actor/data/
+prototype/actor/_diag/
+# Checkpoints: only the trainable heads are worth keeping, and they are small
+prototype/actor/*.pt
+
+# One-off experiment scripts and logs at the repo root
+det_abl*.log
+detect_env2.py
+gen_det2.py
+zs_qwen.py
+
+# Local tooling, not part of the project.
+# The remote-orchestration helpers reach a private host over a tunnel, so the
+# host, port and key are local configuration; the scripts themselves have no
+# place in a public repository. Keep them on disk, keep them out of git.
+tools/npu-ssh.ps1
+tools/npu_probe.sh
+# Publishing helpers: they carry the credential-handling code for this host.
+tools/push_all.sh
+tools/push_to_modelscope_safe.sh
+tools/push_via_api.py
+# The publishing guide that goes with them.
+docs/PUSH-to-github.md
+# One-off experiment pipelines (chain*/peek*/start*/stop*/diag*/perf*/…):
+# they are working records with hardcoded local paths, not project assets.
+tools/*.sh
+
+# Staging copies (a working snapshot of the tree, not the source of truth)

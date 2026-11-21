@@ -1,0 +1,10 @@
+{
+  "counts": {
+    "E1_wall": 0,
+    "E2_wrong_free": 2404,
+    "E3_oscillation": 735,
+    "ok": 963
+  },
+  "decreased_fraction": 0.3432471964895173,
+  "steps": 4102
+}

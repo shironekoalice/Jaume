@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Depth Saturation Predicts When Looping Cannot Help</title>
+<link rel="stylesheet" href="paper.css">
+<script>
+window.MathJax = {
+  tex: {inlineMath: [['$','$']], displayMath: [['441','441']], processEscapes: true},
+  options: {skipHtmlTags: ['script','noscript','style','textarea','pre','code']},
+  chtml: {scale: 1.0}
+};
+</script>
+<script src="mathjax.js"></script>
+</head><body>
+<article>
+<header>
+<h1>Depth Saturation Predicts When Looping Cannot Help: A Controlled Negative Result on Looped Transformers at 350M</h1>
+<div class="author"><div class="author-name">Kru Zeppesey</div><div class="affil">Jaume Project &middot; ModelScope: LightNeko/Jaume</div></div>
+</header>
+
+<div class="abstract"><span class="abstract-label">Abstract.</span>
+Looped and recurrent transformers are claimed to buy reasoning depth without buying parameters: apply the same block $ times and get \times$ the effective depth. We test this claim at 350M parameters on a single Ascend 910B3 and find it does not hold here, for a structural reason rather than a tuning failure. Our central contribution is a cheap <em>depth-saturation criterion</em>: train plain 8L and 16L models on the target task before trying a loop. If 16L does not clearly beat 8L, the task is already computed in a single forward pass and looping can only repeat it. We validate the criterion across eight task structures and four modalities, including a task that is genuinely learnable (8-digit addition, 0.89 exact match) and genuinely serial (carry propagation). In every case 8 layers saturate. We further give a mechanism: inter-round updates form a contraction with geometric decay ratio $\approx 0.6$, so extra rounds converge to a fixed point rather than reasoning further.
+</div>
+
+<h2>1. Introduction</h2>
+<p>A looped transformer applies the same block repeatedly, so parameters stay fixed while effective depth grows. Recent work reports gains: LoopMTP, ECHO, LLA. These are positive results from large models trained for long. The natural question is when the mechanism cannot work at all.</p>
+<p>We ran a pre-registered equal-compute comparison at 350M and it failed: the loop configuration matched for wall-clock was 0.99 nats worse than plain training. Rather than tune further, we measured <em>why</em>, and the measurement turned into a predictor.</p>
+<p><strong>Contributions.</strong></p>
+<ul>
+<li>A cheap pre-flight criterion: depth-scan the task first (&sect;4).</li>
+<li>Eight task structures and four modalities, all consistent (&sect;6).</li>
+<li>A mechanism: rounds contract geometrically, ratio $\approx 0.6$ (&sect;5).</li>
+<li>The distinction between <em>not learnable</em> and <em>not depth-limited</em>, which a naive reading of the parity result would conflate (&sect;7).</li>
+</ul>
+
+<h2>2. Setup</h2>
+<p>All runs use Jaume-Causal, a 350M MoE transformer (16 layers, =512$, 4 experts, top-2) on one Ascend 910B3 with 61 GiB HBM. Training is AdamW, bf16 autocast, learning rate \times10^{-4}$ with cosine decay. Every comparison uses identical data, seed, and step budget unless stated.</p>
+<p><strong>Loop implementation.</strong> The looped variant re-applies the full stack $ times with per-round gating, following the standard &ldquo;full loop, repeat position&rdquo; form. Latent-alignment supervision is available as an ablation.</p>
+
+<h2>3. The equal-compute result</h2>
+<p>Pre-registered criterion: at equal wall-clock, the looped configuration C must beat plain configuration A. It did not.</p>
+<table>
+<thead><tr><th>Config</th><th>blocks</th><th>depth</th><th>val loss</th><th>wall</th></tr></thead>
+<tbody>
+<tr><td>A base</td><td>40k</td><td>16</td><td><strong>4.9406</strong></td><td>17.8m</td></tr>
+<tr><td>B loop (4&times;)</td><td>40k</td><td>64</td><td>4.8975</td><td>44.8m</td></tr>
+<tr><td>C loop equal</td><td>10k</td><td>64</td><td>5.9282</td><td>11m</td></tr>
+<tr><td>D C + align</td><td>10k</td><td>64</td><td>5.9259</td><td>11m</td></tr>
+</tbody></table>
+<p class="caption">Equal-data and equal-compute comparison. B&rsquo;s advantage over A is compute, not looping: at equal wall-clock (C) the loop is 0.99 nats worse.</p>
+<p>This table is the whole story. B looks better than A only because it consumed .5\times$ the compute. Matching wall-clock (C) reverses the ordering by nearly a nat. Alignment supervision (D) does nothing.</p>
+
+<h2>4. Mechanism: rounds contract</h2>
+<p>We probed the loop-4 checkpoint at inference with =1\ldots8$ (same weights, no retraining). Two measurements:</p>
+<p><strong>Inter-round relative distance.</strong></p>
+441T{=}8:\; 0.552 \to 0.363 \to 0.213 \to 0.137 \to 0.097 \to 0.074 \to 0.060441
+<p>Monotone geometric decay, ratio $\approx 0.6$. Rounds 1&ndash;2 change the representation by 55% and 36%; round 7&rarr;8 changes it by 6%.</p>
+<p><strong>Principal-subspace overlap.</strong></p>
+441T{=}8:\; 0.681,\ 0.848,\ 0.945,\ 0.973,\ 0.982,\ 0.993,\ 0.991441
+<p>Overlap saturates near 0.99. All 512 dimensions are &ldquo;moving&rdquo; (dim-var ratio $=1.0$): the loop is not splitting labour between accumulating stable facts and advancing reasoning. It is making decaying updates of the same kind.</p>
+<p><strong>Reading.</strong> The loop is approximately a <em>contraction</em>: each round shrinks the update by a constant factor and converges to a fixed point. Extra rounds are not thinking, they are converging. This explains the equal-compute loss and also reinterprets &ldquo;latent overthinking&rdquo;: the fixed point is already reached.</p>
+
+<h2>5. The depth-saturation criterion</h2>
+<p>If rounds are extra depth, a loop can only help when depth helps. So measure that directly, before spending compute on the loop:</p>
+<blockquote>
+<p>Train plain 8L and 16L models on the target task, identical data and steps.</p>
+<ul>
+<li>16L beats 8L by $&gt;0.01$ (nats or task metric): the task is depth-limited; a loop has room.</li>
+<li>16L $\approx$ 8L: the task is computed in one pass; looping is structurally guaranteed to lose to more data at equal compute.</li>
+</ul>
+</blockquote>
+<p>The scan costs about 0.1 GPU-hour per depth on this hardware, under 0.3 hours total, versus 10+ hours for a full loop comparison.</p>
+
+<h2>6. Validation across tasks</h2>
+<p>A criterion is only useful if it is hard to break. We tried hard, across eight task structures and four modalities.</p>
+<table class="wide">
+<thead><tr><th>Task</th><th>Intended serial structure</th><th>8L</th><th>16L</th><th>Learnable</th><th>Depth-limited</th></tr></thead>
+<tbody>
+<tr><td>Chain lookup</td><td>hBchop rule composition</td><td>0.0000</td><td>0.0000</td><td>yes</td><td>no (closure in one pass)</td></tr>
+<tr><td>Register program</td><td>16 sequential mod-13 ops</td><td>0.0000</td><td>0.0000</td><td>yes</td><td>no (parallel width)</td></tr>
+<tr><td>Sequence reduction</td><td>256-number sum/max</td><td>0.0000</td><td>0.0000</td><td>yes</td><td>no (parallel reduce)</td></tr>
+<tr><td>Two-stage derivation</td><td>stage 2 uses stage 1 result</td><td>0.1815</td><td>0.1812</td><td>yes</td><td>no</td></tr>
+<tr><td>Colour counting (VLM)</td><td>count \times3$ attribute pairs</td><td>0.983</td><td>0.986</td><td>yes</td><td>no</td></tr>
+<tr><td>Constraint path</td><td>same-chain, propagation depth $</td><td>0.0000</td><td>0.0000</td><td>yes</td><td>no (transitive closure)</td></tr>
+<tr><td>Parity / mod-count</td><td>running mod-2/3 state</td><td>0.50</td><td>0.56</td><td><strong>no</strong></td><td>n/a (not learnable)</td></tr>
+<tr class="hl"><td><strong>8-digit addition</strong></td><td>carry chain, exact match</td><td><strong>0.8900</strong></td><td><strong>0.8967</strong></td><td>yes</td><td>no</td></tr>
+</tbody></table>
+<p class="caption">Depth scan across eight task structures. The last row is the strictest: genuinely learnable, genuinely serial (carry propagation), strict exact-match scoring. 16L gains only 0.0067 over 8L while costing .8\times$ the time.</p>
+
+<p><strong>Why the addition row matters.</strong> Earlier rows can be explained away. Chain lookup and constraint paths are computed by transitive closure; sequence reduction and counting are parallel aggregation. But 8-digit addition is the task the loop literature itself uses to argue for depth: the carry into column $ depends on the carry out of column -1$, and the answer digits appear nowhere in the input. It is learnable (0.89 exact match) and strict (one wrong digit is zero). Yet 8 layers saturate: 0.8900 vs 0.8967.</p>
+<p>The mechanism is that attention parallelises the carry. Whether column $ <em>produces</em> a carry is a local function of the two input digits; a model can read all columns at once and compute the carry propagation as a closed-form function of the inputs, without ever passing state column by column.</p>
+
+<h2>7. Not learnable is not the same as not depth-limited</h2>
+<p>Parity is the standard hard task for shallow models, so it looks like the ideal stress test. It is not, and the distinction matters.</p>
+<p>At 8, 16 and 32 layers parity stays at chance (0.50&ndash;0.58) with cross-entropy not decreasing. This is <em>optimisation invisibility</em>, not a depth limit: the gradient signal is too weak for the function to be learned at any depth. Reading it as &ldquo;not enough depth&rdquo; would produce exactly the wrong conclusion.</p>
+<p>A usable criterion therefore has two clauses, not one: <strong>(a) the task must be learnable, (b) 16L must beat 8L.</strong> Only tasks satisfying both are candidates for looping. The addition experiment is the one that satisfies both, and it still saturates.</p>
+
+<h2>8. Implications</h2>
+<ol>
+<li><strong>Screen before you loop.</strong> A 0.3-hour depth scan can rule out a direction that would otherwise cost 10+ hours.</li>
+<li><strong>Scaling this model up will not rescue looping.</strong> If 8 layers already saturate, more layers saturate sooner, and loops have less to add, not more.</li>
+<li><strong>Look for tasks where attention cannot collapse the serial structure</strong> &mdash; incompressible state that must be carried, not recomputed: game-tree search with bounds, or an interactive environment with memory. These remain open.</li>
+</ol>
+
+<h2>9. Limitations</h2>
+<p>One model size (350M), one architecture family, largely synthetic tasks. The criterion is validated as a <em>negative</em> screen: when 8L saturates, the loop is ruled out. We do not claim the converse &mdash; a depth-limited task is necessary for looping to help, not sufficient. The positive direction (what happens when 16L does beat 8L) is untested here because we could not construct such a task at this scale.</p>
+
+<h2>10. Conclusion</h2>
+<p>At 350M, on every task structure and modality we could construct, eight layers suffice. Where that holds, looping cannot pay, and a cheap depth scan says so in advance. The transferable result is the scan itself: measure whether depth helps before paying for a loop.</p>
+
+</article>
+</body></html>

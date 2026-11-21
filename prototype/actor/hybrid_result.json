@@ -1,0 +1,45 @@
+{
+  "detector_latency_ms": 13.613081000003149,
+  "rows": [
+    {
+      "success": 1.0,
+      "ticks": 5.9,
+      "det_per_maze": 5.9,
+      "every": 1,
+      "amortised_ms_per_tick": 13.613081000003149,
+      "effective_hz": 73.45875632413916
+    },
+    {
+      "success": 1.0,
+      "ticks": 5.9,
+      "det_per_maze": 3.19,
+      "every": 2,
+      "amortised_ms_per_tick": 6.806540500001574,
+      "effective_hz": 146.91751264827832
+    },
+    {
+      "success": 1.0,
+      "ticks": 5.9,
+      "det_per_maze": 1.86,
+      "every": 4,
+      "amortised_ms_per_tick": 3.403270250000787,
+      "effective_hz": 293.83502529655664
+    },
+    {
+      "success": 1.0,
+      "ticks": 5.9,
+      "det_per_maze": 1.2,
+      "every": 8,
+      "amortised_ms_per_tick": 1.7016351250003936,
+      "effective_hz": 587.6700505931133
+    },
+    {
+      "success": 1.0,
+      "ticks": 5.9,
+      "det_per_maze": 1.0,
+      "every": 16,
+      "amortised_ms_per_tick": 0.8508175625001968,
+      "effective_hz": 1175.3401011862265
+    }
+  ]
+}

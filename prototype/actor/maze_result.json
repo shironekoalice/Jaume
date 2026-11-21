@@ -1,0 +1,14 @@
+{
+  "frame_acc": 0.953,
+  "closed_loop": {
+    "model": 0.76,
+    "oracle": 1.0,
+    "random": 0.0
+  },
+  "mean_ticks_model": 13.62,
+  "mean_ticks_oracle": 10.54,
+  "latency_ms": 2.798323631286621,
+  "decisions_per_s": 357.3568077757387,
+  "params": 8516324,
+  "epochs": 25
+}

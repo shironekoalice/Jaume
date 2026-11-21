@@ -1,0 +1,20 @@
+{
+  "P_linear_probe": {
+    "params": 1541,
+    "best_top1": 0.8888888888888888,
+    "last_top1": 0.8888888888888888,
+    "floor": 0.16666666666666666
+  },
+  "G_gated": {
+    "params": 2439169,
+    "best_top1": 1.0,
+    "last_top1": 1.0,
+    "floor": 0.16666666666666666
+  },
+  "N_gated_no_instruction": {
+    "params": 2439169,
+    "best_top1": 1.0,
+    "last_top1": 1.0,
+    "floor": 0.16666666666666666
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "spatial_cnn": {
+    "agent_acc": 0.998,
+    "goal_acc": 0.996
+  },
+  "pooled_cnn": {
+    "agent_acc": 0.016,
+    "goal_acc": 0.024
+  }
+}

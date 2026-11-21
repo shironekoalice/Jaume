@@ -1,0 +1,16 @@
+{
+  "qwen3vl_2b": {
+    "L1_full_prompt": {
+      "top1": 0.48,
+      "floor": 0.16666666666666666,
+      "latency_ms": 8998.354201316833,
+      "images_per_forward": 7
+    },
+    "L2_screen_only_regression": {
+      "regression_acc": 0.14,
+      "parsed": 1.0,
+      "latency_ms": 12328.703427314758,
+      "images_per_forward": 1
+    }
+  }
+}

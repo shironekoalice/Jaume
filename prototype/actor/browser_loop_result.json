@@ -1,0 +1,54 @@
+{
+  "accuracy": 1.0,
+  "n": 6,
+  "results": [
+    {
+      "task": "single",
+      "color": "green",
+      "pick": 3,
+      "gold": 3,
+      "correct": true
+    },
+    {
+      "task": "single",
+      "color": "blue",
+      "pick": 2,
+      "gold": 2,
+      "correct": true
+    },
+    {
+      "task": "single",
+      "color": "red",
+      "pick": 4,
+      "gold": 4,
+      "correct": true
+    },
+    {
+      "task": "single",
+      "color": "gray",
+      "pick": 5,
+      "gold": 5,
+      "correct": true
+    },
+    {
+      "task": "two_step",
+      "step1_ok": true,
+      "step2_ok": true,
+      "pick1": 0,
+      "gold1": 0,
+      "pick2": 1,
+      "gold2": 1,
+      "correct": true
+    },
+    {
+      "task": "two_step",
+      "step1_ok": true,
+      "step2_ok": true,
+      "pick1": 0,
+      "gold1": 0,
+      "pick2": 2,
+      "gold2": 2,
+      "correct": true
+    }
+  ]
+}

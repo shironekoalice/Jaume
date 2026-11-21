@@ -1,0 +1,1115 @@
+{
+  "sha": "655c95a7d104e9dd76670b2e581a6d583ead38fb",
+  "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/655c95a7d104e9dd76670b2e581a6d583ead38fb",
+  "tree": [
+    {
+      "path": ".gitattributes",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7918050d4917680a5e33ef920f696bd2d04ca7b2",
+      "size": 12310,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/7918050d4917680a5e33ef920f696bd2d04ca7b2"
+    },
+    {
+      "path": ".gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1e02827ab9ab5ead044631650f8cb0f4155130d1",
+      "size": 2424,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/1e02827ab9ab5ead044631650f8cb0f4155130d1"
+    },
+    {
+      "path": "PLAN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3aed08502caaa8fadfe64baec2d2e278b22a2cd1",
+      "size": 5609,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/3aed08502caaa8fadfe64baec2d2e278b22a2cd1"
+    },
+    {
+      "path": "README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ce344ba4bb641cf0875104a8213aefc10bcbafd3",
+      "size": 13265,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ce344ba4bb641cf0875104a8213aefc10bcbafd3"
+    },
+    {
+      "path": "SPEC.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "397f61511b973c8b541298d4d3b9fec2ac3c336b",
+      "size": 22063,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/397f61511b973c8b541298d4d3b9fec2ac3c336b"
+    },
+    {
+      "path": "UPLOAD_MANIFEST.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe529f4b074d9aab39ea9cd1f34b6633cedc671d",
+      "size": 3585,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/fe529f4b074d9aab39ea9cd1f34b6633cedc671d"
+    },
+    {
+      "path": "code",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2cfc9691fd692321a5f7f2350eec5f3d845aa4e5",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/2cfc9691fd692321a5f7f2350eec5f3d845aa4e5"
+    },
+    {
+      "path": "code/jaume-repo.tar.gz",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fe4921b2549e3e8e3d8b1cbe742453748abdb3b0",
+      "size": 3988704,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/fe4921b2549e3e8e3d8b1cbe742453748abdb3b0"
+    },
+    {
+      "path": "code/jaume",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6b56ba3119d9fbbeada11d128738e0ab8927872",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/c6b56ba3119d9fbbeada11d128738e0ab8927872"
+    },
+    {
+      "path": "code/jaume/modeling",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "13376a3e51367be5a4ea7429084498b1fd0e1e6f",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/13376a3e51367be5a4ea7429084498b1fd0e1e6f"
+    },
+    {
+      "path": "code/jaume/modeling/embedding.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "64a13c81c321c0aeeff23bd14f715d4139871da7",
+      "size": 4890,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/64a13c81c321c0aeeff23bd14f715d4139871da7"
+    },
+    {
+      "path": "code/jaume/modeling/memory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4070c109e5d7d1cd3cfc6c2dace46d24fbc3cc38",
+      "size": 16449,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/4070c109e5d7d1cd3cfc6c2dace46d24fbc3cc38"
+    },
+    {
+      "path": "code/repo",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "cf8d0182e93e373c3ac33929e77bb108b07524aa",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/cf8d0182e93e373c3ac33929e77bb108b07524aa"
+    },
+    {
+      "path": "code/repo/.gitignore",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b51219ce73aaabc48c7750c45a1fde57f480cb64",
+      "size": 53,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/b51219ce73aaabc48c7750c45a1fde57f480cb64"
+    },
+    {
+      "path": "code/repo/PLAN.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fde0cec6dae2efd46066e031746493c8820e5de2",
+      "size": 4623,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/fde0cec6dae2efd46066e031746493c8820e5de2"
+    },
+    {
+      "path": "code/repo/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d93bc35c731f3f102c11ba017a46b2a351df3a8d",
+      "size": 1994,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/d93bc35c731f3f102c11ba017a46b2a351df3a8d"
+    },
+    {
+      "path": "code/repo/SPEC.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "397f61511b973c8b541298d4d3b9fec2ac3c336b",
+      "size": 22063,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/397f61511b973c8b541298d4d3b9fec2ac3c336b"
+    },
+    {
+      "path": "code/repo/configs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "667deef039cb66bdc47e8565797342e088986873",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/667deef039cb66bdc47e8565797342e088986873"
+    },
+    {
+      "path": "code/repo/configs/jaume-350m.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8b774c1de57aa9255a212160c3a92768df10f932",
+      "size": 471,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/8b774c1de57aa9255a212160c3a92768df10f932"
+    },
+    {
+      "path": "code/repo/configs/jaume-700m.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c758cbf4291f92903b8ed2168d5c5443d03161bd",
+      "size": 478,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/c758cbf4291f92903b8ed2168d5c5443d03161bd"
+    },
+    {
+      "path": "code/repo/configs/jaume-cpu-tiny.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bd0c3f1698783edf4f5f91495b37722983b620b4",
+      "size": 477,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/bd0c3f1698783edf4f5f91495b37722983b620b4"
+    },
+    {
+      "path": "code/repo/configs/jaume-smoke.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "1588e8362f40397c8272edd4e4626cbfceb24dc3",
+      "size": 466,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/1588e8362f40397c8272edd4e4626cbfceb24dc3"
+    },
+    {
+      "path": "code/repo/configs/omni-qwen3vl-2b.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f6a3f9816e43c78289fa8a2cfb4d9c67ec9dbf61",
+      "size": 935,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/f6a3f9816e43c78289fa8a2cfb4d9c67ec9dbf61"
+    },
+    {
+      "path": "code/repo/jaume",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "f1641449f93ae2855834dcdb815bfb3bfeaf379e",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/f1641449f93ae2855834dcdb815bfb3bfeaf379e"
+    },
+    {
+      "path": "code/repo/jaume/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5db8b2d34717f561b2e8b2312cc9c98cc3f12bfd",
+      "size": 201,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/5db8b2d34717f561b2e8b2312cc9c98cc3f12bfd"
+    },
+    {
+      "path": "code/repo/jaume/data",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6eaf45c8f9502827758660fa168330d2bf61cb80",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/6eaf45c8f9502827758660fa168330d2bf61cb80"
+    },
+    {
+      "path": "code/repo/jaume/data/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7db50f9f4a406f4ea784d6b25d427a041a643e2c",
+      "size": 152,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/7db50f9f4a406f4ea784d6b25d427a041a643e2c"
+    },
+    {
+      "path": "code/repo/jaume/data/collator.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09e70232a362eaeeffb16f8aaeb4acfd1a9b5573",
+      "size": 2329,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/09e70232a362eaeeffb16f8aaeb4acfd1a9b5573"
+    },
+    {
+      "path": "code/repo/jaume/data/dataset.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ec364cf8e5496962a0c0ac084eca5380db3f20d7",
+      "size": 2629,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ec364cf8e5496962a0c0ac084eca5380db3f20d7"
+    },
+    {
+      "path": "code/repo/jaume/data/negative_mining.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ecd183ad0e3147637cd58b0d94fb43af3add09d2",
+      "size": 5990,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ecd183ad0e3147637cd58b0d94fb43af3add09d2"
+    },
+    {
+      "path": "code/repo/jaume/inference",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "2d7185259c94fea759b012c0a4c7d2c9f09cf6ca",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/2d7185259c94fea759b012c0a4c7d2c9f09cf6ca"
+    },
+    {
+      "path": "code/repo/jaume/inference/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "691abaf0885f0aab2642b5b0f5d04ca27f4676e9",
+      "size": 53,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/691abaf0885f0aab2642b5b0f5d04ca27f4676e9"
+    },
+    {
+      "path": "code/repo/jaume/losses",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "58d6d932dbbd0ed8ff5d393c545f38ffd923c21e",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/58d6d932dbbd0ed8ff5d393c545f38ffd923c21e"
+    },
+    {
+      "path": "code/repo/jaume/losses/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d3103c264f515b539112e5ded67977df6dc17c87",
+      "size": 245,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/d3103c264f515b539112e5ded67977df6dc17c87"
+    },
+    {
+      "path": "code/repo/jaume/losses/calibration.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a55c872b775380c71d71d1956e2fa21342e9849c",
+      "size": 5579,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/a55c872b775380c71d71d1956e2fa21342e9849c"
+    },
+    {
+      "path": "code/repo/jaume/losses/contrastive.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ee9d76f80516fcd303889a57cb09d5ebf5d36cb5",
+      "size": 2214,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ee9d76f80516fcd303889a57cb09d5ebf5d36cb5"
+    },
+    {
+      "path": "code/repo/jaume/losses/gradcache.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6c5126a6a667be3ad6c68b31b05f03811da28de2",
+      "size": 4352,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/6c5126a6a667be3ad6c68b31b05f03811da28de2"
+    },
+    {
+      "path": "code/repo/jaume/modeling",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "256183a33eb8df611d69994b4ff769d8a39d6a2d",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/256183a33eb8df611d69994b4ff769d8a39d6a2d"
+    },
+    {
+      "path": "code/repo/jaume/modeling/__init__.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31b12cbec5ea6a2fbf36ea6161942f2b29b7b917",
+      "size": 114,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/31b12cbec5ea6a2fbf36ea6161942f2b29b7b917"
+    },
+    {
+      "path": "code/repo/jaume/modeling/attention.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "203285d58e83af7a9a3c237c48ca447d236d870d",
+      "size": 3028,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/203285d58e83af7a9a3c237c48ca447d236d870d"
+    },
+    {
+      "path": "code/repo/jaume/modeling/backbone.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b34213423c67f5739f236b7076efdaad74b22e88",
+      "size": 2691,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/b34213423c67f5739f236b7076efdaad74b22e88"
+    },
+    {
+      "path": "code/repo/jaume/modeling/decision.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5a332ee741f63002b60af1e2f00181a9e94db09b",
+      "size": 5103,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/5a332ee741f63002b60af1e2f00181a9e94db09b"
+    },
+    {
+      "path": "code/repo/jaume/modeling/memory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8a3f533f69c841a9a542642331389f2dd62e5506",
+      "size": 19954,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/8a3f533f69c841a9a542642331389f2dd62e5506"
+    },
+    {
+      "path": "code/repo/jaume/modeling/pooling.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3a28fb70ae214a304245f8c37a0e88a2edf6e797",
+      "size": 1833,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/3a28fb70ae214a304245f8c37a0e88a2edf6e797"
+    },
+    {
+      "path": "code/repo/jaume_tokenizer",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "fdb35980e9c431d47d88b6a4ef293cd9892e5e7f",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/fdb35980e9c431d47d88b6a4ef293cd9892e5e7f"
+    },
+    {
+      "path": "code/repo/jaume_tokenizer/merges.txt",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "31349551d90c7606f325fe0f11bbb8bd5fa0d7c7",
+      "size": 1671853,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/31349551d90c7606f325fe0f11bbb8bd5fa0d7c7"
+    },
+    {
+      "path": "code/repo/jaume_tokenizer/tokenizer.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b37912933fe44e7b5a0b0d069843c415be221258",
+      "size": 11418266,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/b37912933fe44e7b5a0b0d069843c415be221258"
+    },
+    {
+      "path": "code/repo/jaume_tokenizer/tokenizer_config.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "da650d5c754db78e906adf352e828f6d9efbd90c",
+      "size": 1472,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/da650d5c754db78e906adf352e828f6d9efbd90c"
+    },
+    {
+      "path": "code/repo/jaume_tokenizer/vocab.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4783fe10ac3adce15ac8f358ef5462739852c569",
+      "size": 2776833,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/4783fe10ac3adce15ac8f358ef5462739852c569"
+    },
+    {
+      "path": "code/repo/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "92da3612353b7837e2811871f87656983f281430",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/92da3612353b7837e2811871f87656983f281430"
+    },
+    {
+      "path": "code/repo/scripts/check_npu_env.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0ccd7c714c5f92fd2c57a4b84aec951c764e0634",
+      "size": 10291,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0ccd7c714c5f92fd2c57a4b84aec951c764e0634"
+    },
+    {
+      "path": "code/repo/scripts/diagnose_slots.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49b8d485a11c5a2ec575bd09bc8ae853c01918d9",
+      "size": 6450,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/49b8d485a11c5a2ec575bd09bc8ae853c01918d9"
+    },
+    {
+      "path": "code/repo/scripts/eval_memory_crossinput.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c85ce0e70ec6e0a225149fc512f8783534446fc3",
+      "size": 21883,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/c85ce0e70ec6e0a225149fc512f8783534446fc3"
+    },
+    {
+      "path": "code/repo/scripts/evaluate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c783f3245ff97e138c1c9105459919a495153a8",
+      "size": 3252,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0c783f3245ff97e138c1c9105459919a495153a8"
+    },
+    {
+      "path": "code/repo/scripts/evaluate_holdout.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71eab74e4a7aeb7a80fac1d630c93d3ad088b713",
+      "size": 10384,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/71eab74e4a7aeb7a80fac1d630c93d3ad088b713"
+    },
+    {
+      "path": "code/repo/scripts/make_crossblock_v3.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "26e0910c84c0f0dff75f1035803e057f3452fd20",
+      "size": 12629,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/26e0910c84c0f0dff75f1035803e057f3452fd20"
+    },
+    {
+      "path": "code/repo/scripts/make_synth_train.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ffbfa917a9812cefa8218f9be0c1e40bba83bb79",
+      "size": 4560,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ffbfa917a9812cefa8218f9be0c1e40bba83bb79"
+    },
+    {
+      "path": "code/repo/scripts/make_synthetic_crossblock.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ccdca32bb0a57b368dc8726ace143271c3f518e4",
+      "size": 13664,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ccdca32bb0a57b368dc8726ace143271c3f518e4"
+    },
+    {
+      "path": "code/repo/scripts/mine_hard_negatives.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b7250bd656f3ae874340ff3ff64c0e641a2166b",
+      "size": 2810,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/6b7250bd656f3ae874340ff3ff64c0e641a2166b"
+    },
+    {
+      "path": "code/repo/scripts/ms_delete.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef87197615fc037393854d6aed7720da01877058",
+      "size": 634,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ef87197615fc037393854d6aed7720da01877058"
+    },
+    {
+      "path": "code/repo/scripts/plan_head_study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "20162e4ec6d2e4671814fcc8c553a4c64a0e3758",
+      "size": 12560,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/20162e4ec6d2e4671814fcc8c553a4c64a0e3758"
+    },
+    {
+      "path": "code/repo/scripts/plan_joint_study.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8d0a29409a016808ee16d8baaac67cd866fd1426",
+      "size": 10391,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/8d0a29409a016808ee16d8baaac67cd866fd1426"
+    },
+    {
+      "path": "code/repo/scripts/qasper_batch.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "145a71f418968a522ff8f53b584ddfa6703d5561",
+      "size": 4477,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/145a71f418968a522ff8f53b584ddfa6703d5561"
+    },
+    {
+      "path": "code/repo/scripts/report_memory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9be6c8959a2a15a345f6836e67373780f9a179a",
+      "size": 4017,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/e9be6c8959a2a15a345f6836e67373780f9a179a"
+    },
+    {
+      "path": "code/repo/scripts/run_jmr_arms.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b128f2739c42d66365867877969eca6ff790be1c",
+      "size": 2166,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/b128f2739c42d66365867877969eca6ff790be1c"
+    },
+    {
+      "path": "code/repo/scripts/run_memory_fixes.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09b8e54ae05327e87ac6f9f61ea60431be9eeac3",
+      "size": 2910,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/09b8e54ae05327e87ac6f9f61ea60431be9eeac3"
+    },
+    {
+      "path": "code/repo/scripts/run_memory_fixes.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82d9399af436b5d5d5510dcb50ba5bc9d1df8107",
+      "size": 2374,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/82d9399af436b5d5d5510dcb50ba5bc9d1df8107"
+    },
+    {
+      "path": "code/repo/scripts/run_memory_sweep.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "564eeadee3ea9b7fecb131a61c84ccca30c7c985",
+      "size": 1947,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/564eeadee3ea9b7fecb131a61c84ccca30c7c985"
+    },
+    {
+      "path": "code/repo/scripts/run_stage1_pipeline.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db85890ac25ec9a1b19459fd094689061c35163c",
+      "size": 2390,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/db85890ac25ec9a1b19459fd094689061c35163c"
+    },
+    {
+      "path": "code/repo/scripts/stage_upload.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ef98dc161316e97eef4633285156ccd4b0633521",
+      "size": 3154,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ef98dc161316e97eef4633285156ccd4b0633521"
+    },
+    {
+      "path": "code/repo/scripts/sync_modelscope.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0555c66e9b7158717b83745b10269c884df60a3c",
+      "size": 2846,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0555c66e9b7158717b83745b10269c884df60a3c"
+    },
+    {
+      "path": "code/repo/scripts/tb_sync.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0742a410314b693e2b33362e8f0bd4abe287ce97",
+      "size": 4224,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0742a410314b693e2b33362e8f0bd4abe287ce97"
+    },
+    {
+      "path": "code/repo/scripts/upload_jaume.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca71445af4d9144c9d6e3b024a3e2abbca013e0e",
+      "size": 3885,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ca71445af4d9144c9d6e3b024a3e2abbca013e0e"
+    },
+    {
+      "path": "code/repo/tests",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "afaf5218f758dea4c1e317cfd2a97d1aace33ebb",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/afaf5218f758dea4c1e317cfd2a97d1aace33ebb"
+    },
+    {
+      "path": "code/repo/tests/test_model.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "d0c22bacb1d9eeebaf38577ec4aafc00f3d2fdd9",
+      "size": 4530,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/d0c22bacb1d9eeebaf38577ec4aafc00f3d2fdd9"
+    },
+    {
+      "path": "code/repo/tests/test_stage3_stage6.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2079e2f523fafc32ef71b8c3c417baa20054ed88",
+      "size": 9077,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/2079e2f523fafc32ef71b8c3c417baa20054ed88"
+    },
+    {
+      "path": "code/scripts",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "ac22d865dffc6dc0eecb294f19b27015120d7854",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/ac22d865dffc6dc0eecb294f19b27015120d7854"
+    },
+    {
+      "path": "code/scripts/diagnose_slots.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "49b8d485a11c5a2ec575bd09bc8ae853c01918d9",
+      "size": 6450,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/49b8d485a11c5a2ec575bd09bc8ae853c01918d9"
+    },
+    {
+      "path": "code/scripts/evaluate.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0c783f3245ff97e138c1c9105459919a495153a8",
+      "size": 3252,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0c783f3245ff97e138c1c9105459919a495153a8"
+    },
+    {
+      "path": "code/scripts/evaluate_holdout.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "71eab74e4a7aeb7a80fac1d630c93d3ad088b713",
+      "size": 10384,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/71eab74e4a7aeb7a80fac1d630c93d3ad088b713"
+    },
+    {
+      "path": "code/scripts/mine_hard_negatives.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6b7250bd656f3ae874340ff3ff64c0e641a2166b",
+      "size": 2810,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/6b7250bd656f3ae874340ff3ff64c0e641a2166b"
+    },
+    {
+      "path": "code/scripts/report_memory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e9be6c8959a2a15a345f6836e67373780f9a179a",
+      "size": 4017,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/e9be6c8959a2a15a345f6836e67373780f9a179a"
+    },
+    {
+      "path": "code/scripts/run_memory_fixes.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09b8e54ae05327e87ac6f9f61ea60431be9eeac3",
+      "size": 2910,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/09b8e54ae05327e87ac6f9f61ea60431be9eeac3"
+    },
+    {
+      "path": "code/scripts/run_memory_fixes.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "82d9399af436b5d5d5510dcb50ba5bc9d1df8107",
+      "size": 2374,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/82d9399af436b5d5d5510dcb50ba5bc9d1df8107"
+    },
+    {
+      "path": "code/scripts/run_memory_sweep.ps1",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "564eeadee3ea9b7fecb131a61c84ccca30c7c985",
+      "size": 1947,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/564eeadee3ea9b7fecb131a61c84ccca30c7c985"
+    },
+    {
+      "path": "code/scripts/run_stage1_pipeline.sh",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db85890ac25ec9a1b19459fd094689061c35163c",
+      "size": 2390,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/db85890ac25ec9a1b19459fd094689061c35163c"
+    },
+    {
+      "path": "code/scripts/smoke_test.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "95c5cac60aa99cab2ad8d8c48266c354806a890f",
+      "size": 6901,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/95c5cac60aa99cab2ad8d8c48266c354806a890f"
+    },
+    {
+      "path": "code/scripts/stage_upload.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3ea8f2c75b05e4f55f550cb434addd647c1478c3",
+      "size": 2827,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/3ea8f2c75b05e4f55f550cb434addd647c1478c3"
+    },
+    {
+      "path": "code/scripts/sync_modelscope.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0555c66e9b7158717b83745b10269c884df60a3c",
+      "size": 2846,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0555c66e9b7158717b83745b10269c884df60a3c"
+    },
+    {
+      "path": "code/scripts/tb_sync.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0742a410314b693e2b33362e8f0bd4abe287ce97",
+      "size": 4224,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0742a410314b693e2b33362e8f0bd4abe287ce97"
+    },
+    {
+      "path": "code/scripts/train_decision.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "7dd3733aae3aaceb7ba95a9af9e3c5e09e43f406",
+      "size": 14788,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/7dd3733aae3aaceb7ba95a9af9e3c5e09e43f406"
+    },
+    {
+      "path": "code/scripts/train_embedding.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5f6996a95e0532ddcb050d4038d136e035fec46d",
+      "size": 9406,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/5f6996a95e0532ddcb050d4038d136e035fec46d"
+    },
+    {
+      "path": "code/scripts/train_memory.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "e2a62979a590460cf115b40fbf42b9b6db501465",
+      "size": 13067,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/e2a62979a590460cf115b40fbf42b9b6db501465"
+    },
+    {
+      "path": "code/scripts/train_mlm.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "337bc2c64dfbca67e83e6fbb9bf82ff2d95a7e77",
+      "size": 8848,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/337bc2c64dfbca67e83e6fbb9bf82ff2d95a7e77"
+    },
+    {
+      "path": "code/scripts/upload_jaume.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "ca71445af4d9144c9d6e3b024a3e2abbca013e0e",
+      "size": 3885,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/ca71445af4d9144c9d6e3b024a3e2abbca013e0e"
+    },
+    {
+      "path": "docs",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c6773a386ccdddb8140df63b08f077041b68420f",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/c6773a386ccdddb8140df63b08f077041b68420f"
+    },
+    {
+      "path": "docs/Transformer热门创新思路166篇.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "441beaaf0fadcfe13e6d9ede99a4eedd0edd63cd",
+      "size": 59076,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/441beaaf0fadcfe13e6d9ede99a4eedd0edd63cd"
+    },
+    {
+      "path": "docs/ascend-950-application.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "02e0288ffe7909c781c4ee2fba1eb2dd38fdd41c",
+      "size": 7597,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/02e0288ffe7909c781c4ee2fba1eb2dd38fdd41c"
+    },
+    {
+      "path": "docs/jaume-actor-handoff.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9d49c543c210e1299057f9b96cf871e156210d29",
+      "size": 15331,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/9d49c543c210e1299057f9b96cf871e156210d29"
+    },
+    {
+      "path": "docs/memory-archive-index.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6725c44f3a150cadd08c9e5b619d8ffd0212751d",
+      "size": 5662,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/6725c44f3a150cadd08c9e5b619d8ffd0212751d"
+    },
+    {
+      "path": "docs/memory-breakthrough-diagnosis.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "062f47535d3d70fe9c37e16760d09733bd227835",
+      "size": 8587,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/062f47535d3d70fe9c37e16760d09733bd227835"
+    },
+    {
+      "path": "docs/memory-experiment-a.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "55c2cdaad9fdede0d67996425c933981f50fd644",
+      "size": 6854,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/55c2cdaad9fdede0d67996425c933981f50fd644"
+    },
+    {
+      "path": "docs/memory-final-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "62a691102935e5688f32e16a4ae40ed8f3977c5a",
+      "size": 7007,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/62a691102935e5688f32e16a4ae40ed8f3977c5a"
+    },
+    {
+      "path": "docs/memory-gate-diagnosis.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "593a1e197b1cf23e226a22beec8648ac5a9f4e61",
+      "size": 11127,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/593a1e197b1cf23e226a22beec8648ac5a9f4e61"
+    },
+    {
+      "path": "docs/memory-next-steps.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2361c939ff9fa9d25dca792d484abb79849037be",
+      "size": 11057,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/2361c939ff9fa9d25dca792d484abb79849037be"
+    },
+    {
+      "path": "docs/memory-nine-run-report.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18f871f8de6ac58902165555fb6afdc7e05b186f",
+      "size": 6008,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/18f871f8de6ac58902165555fb6afdc7e05b186f"
+    },
+    {
+      "path": "docs/memory-p0-audit.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "486fe170f0013973945680e45e690257f6b17fbc",
+      "size": 6445,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/486fe170f0013973945680e45e690257f6b17fbc"
+    },
+    {
+      "path": "docs/memory-p1-synthetic-task.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5acb26a629f2a53504e5995d3a865d73e3f904a4",
+      "size": 5736,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/5acb26a629f2a53504e5995d3a865d73e3f904a4"
+    },
+    {
+      "path": "docs/memory-p15-g3.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fef6be0f6114bd779129f7b5544800d3420c5b17",
+      "size": 7213,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/fef6be0f6114bd779129f7b5544800d3420c5b17"
+    },
+    {
+      "path": "docs/memory-p2-round1.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5d6c13f0887a8f06dbb7bc2656eb5f59599e30a0",
+      "size": 8638,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/5d6c13f0887a8f06dbb7bc2656eb5f59599e30a0"
+    },
+    {
+      "path": "docs/memory-p2-summary.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bac713d1cd5d70d9be30c38d86f6f4aa24a242ba",
+      "size": 8780,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/bac713d1cd5d70d9be30c38d86f6f4aa24a242ba"
+    },
+    {
+      "path": "docs/memory-plan.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b97088a65b775f774628e2bbbdb16f107ae4b0a2",
+      "size": 9475,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/b97088a65b775f774628e2bbbdb16f107ae4b0a2"
+    },
+    {
+      "path": "docs/memory-plan1.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "a94971d482431e7daadcbf4909a48d809b3d00e9",
+      "size": 9481,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/a94971d482431e7daadcbf4909a48d809b3d00e9"
+    },
+    {
+      "path": "docs/memory-preregistration.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "5c287cb6a95428038303ca53ca4e59de19eca11b",
+      "size": 9063,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/5c287cb6a95428038303ca53ca4e59de19eca11b"
+    },
+    {
+      "path": "docs/memory-qasper-collapse.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "6357dc860debdc9cbdbf1e29670c23c655c1a878",
+      "size": 7102,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/6357dc860debdc9cbdbf1e29670c23c655c1a878"
+    },
+    {
+      "path": "docs/memory-qasper-spec.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "bcc439c7e6b9b8c94f101355a0656351fc716b52",
+      "size": 7644,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/bcc439c7e6b9b8c94f101355a0656351fc716b52"
+    },
+    {
+      "path": "docs/memory-r1-results.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "0793fe33da652051be5f9179d956fa599e100726",
+      "size": 8319,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/0793fe33da652051be5f9179d956fa599e100726"
+    },
+    {
+      "path": "docs/memory-results-crossinput.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "3e658135a089240de7bc7f1c796ccf1e7dd60995",
+      "size": 12896,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/3e658135a089240de7bc7f1c796ccf1e7dd60995"
+    },
+    {
+      "path": "docs/memory-results-round2.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "18572b75269b4effe7e87581291063e3b5b41a06",
+      "size": 3585,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/18572b75269b4effe7e87581291063e3b5b41a06"
+    },
+    {
+      "path": "docs/memory-results.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "db77263f088fdc4374921b81677b1e0d710d0250",
+      "size": 9031,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/db77263f088fdc4374921b81677b1e0d710d0250"
+    },
+    {
+      "path": "docs/memory-scifact-spec.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "c273f718bea81717b07cc060eaa1b1629f3f238b",
+      "size": 13085,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/c273f718bea81717b07cc060eaa1b1629f3f238b"
+    },
+    {
+      "path": "docs/memory-state-probe.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "72ce72639e2c14227ca8352f2396c499bdb5770f",
+      "size": 8435,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/72ce72639e2c14227ca8352f2396c499bdb5770f"
+    },
+    {
+      "path": "docs/memory-task-necessity-audit.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4f9af5a4a7d49fbc96ead9d418c5df8fb8105578",
+      "size": 11565,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/4f9af5a4a7d49fbc96ead9d418c5df8fb8105578"
+    },
+    {
+      "path": "docs/overview.en.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2d6dd77c6ada7ade4d058ecb971b8d0e711054b0",
+      "size": 4816,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/2d6dd77c6ada7ade4d058ecb971b8d0e711054b0"
+    },
+    {
+      "path": "docs/overview.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "2b4d951ad9dce38f29e3df42d39bc4e161e2dcb8",
+      "size": 5392,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/2b4d951ad9dce38f29e3df42d39bc4e161e2dcb8"
+    },
+    {
+      "path": "docs/paper",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "7727072d4809af081041c2fad5852721c3207787",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/7727072d4809af081041c2fad5852721c3207787"
+    },
+    {
+      "path": "docs/paper/make_figures.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "417c165782560d97df1fcc7b1aa45710a3f3b65e",
+      "size": 12644,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/417c165782560d97df1fcc7b1aa45710a3f3b65e"
+    },
+    {
+      "path": "docs/temporal-spec.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "fbf417e69cfc2ea646331d5cd5545b13fb9fc227",
+      "size": 7058,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/fbf417e69cfc2ea646331d5cd5545b13fb9fc227"
+    },
+    {
+      "path": "docs/ttc-reasoning-literature.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "b8cf5325eaa0493e202a94a47271cec1149541a3",
+      "size": 28314,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/b8cf5325eaa0493e202a94a47271cec1149541a3"
+    },
+    {
+      "path": "docs/ttc-spec.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "9a7c0762568939d2ef95fe96e25b696c705f4c48",
+      "size": 37138,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/9a7c0762568939d2ef95fe96e25b696c705f4c48"
+    },
+    {
+      "path": "prototype",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "c832719e63469719a5fc914139dc61a539c23b39",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/c832719e63469719a5fc914139dc61a539c23b39"
+    },
+    {
+      "path": "prototype/actor",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "6c598449bb032f2b7f5284504f0225e6c971e133",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/6c598449bb032f2b7f5284504f0225e6c971e133"
+    },
+    {
+      "path": "prototype/actor/README.md",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "94c1ec872eee526195c1e1e5964c203a3468ed97",
+      "size": 7320,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/94c1ec872eee526195c1e1e5964c203a3468ed97"
+    },
+    {
+      "path": "results",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "4cbee0d30d39b662add936aac424538f6d9baa75",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/4cbee0d30d39b662add936aac424538f6d9baa75"
+    },
+    {
+      "path": "results/gate0-v3.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "f8cc9599c6e384b56f47bc7aae80cc7db397cb39",
+      "size": 2389,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/f8cc9599c6e384b56f47bc7aae80cc7db397cb39"
+    },
+    {
+      "path": "results/gate0-v3.log",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "4409e1b9c4148feaf8704c1b613b480292276925",
+      "size": 2275,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/4409e1b9c4148feaf8704c1b613b480292276925"
+    },
+    {
+      "path": "results/gate0-v4.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "cfa7a0d7b99f473f961398951284b1cd49d6567d",
+      "size": 3662,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/cfa7a0d7b99f473f961398951284b1cd49d6567d"
+    },
+    {
+      "path": "results/gate0-v4.log",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8e73a4f4663708bca5f07cc7349216a6a4b8012a",
+      "size": 2612,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/8e73a4f4663708bca5f07cc7349216a6a4b8012a"
+    },
+    {
+      "path": "rm.json",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "8ac988931ccc21adae8e9e295f7c6e1d43f9a705",
+      "size": 19322,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/8ac988931ccc21adae8e9e295f7c6e1d43f9a705"
+    },
+    {
+      "path": "tools",
+      "mode": "040000",
+      "type": "tree",
+      "sha": "3fd4dbece76fb6fd325dfcdbca9e8140c2049b51",
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/trees/3fd4dbece76fb6fd325dfcdbca9e8140c2049b51"
+    },
+    {
+      "path": "tools/ms_fetch_final.py",
+      "mode": "100644",
+      "type": "blob",
+      "sha": "09b3d1fe76734c1c0ce04c55003957c6f5cc1d40",
+      "size": 226,
+      "url": "https://api.github.com/repos/shironekoalice/Jaume/git/blobs/09b3d1fe76734c1c0ce04c55003957c6f5cc1d40"
+    }
+  ],
+  "truncated": false
+}

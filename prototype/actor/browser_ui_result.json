@@ -1,0 +1,171 @@
+{
+  "accuracy": 1.0,
+  "n": 20,
+  "by_template": {
+    "buttons": 1.0,
+    "cards": 1.0,
+    "mixed": 1.0
+  },
+  "results": [
+    {
+      "template": "buttons",
+      "extra": 0,
+      "n_cand": 4,
+      "pick": 0,
+      "gold": 0,
+      "correct": true
+    },
+    {
+      "template": "buttons",
+      "extra": 0,
+      "n_cand": 4,
+      "pick": 1,
+      "gold": 1,
+      "correct": true
+    },
+    {
+      "template": "buttons",
+      "extra": 0,
+      "n_cand": 4,
+      "pick": 2,
+      "gold": 2,
+      "correct": true
+    },
+    {
+      "template": "buttons",
+      "extra": 0,
+      "n_cand": 4,
+      "pick": 3,
+      "gold": 3,
+      "correct": true
+    },
+    {
+      "template": "buttons",
+      "extra": 3,
+      "n_cand": 4,
+      "pick": 0,
+      "gold": 0,
+      "correct": true
+    },
+    {
+      "template": "buttons",
+      "extra": 3,
+      "n_cand": 4,
+      "pick": 1,
+      "gold": 1,
+      "correct": true
+    },
+    {
+      "template": "buttons",
+      "extra": 3,
+      "n_cand": 4,
+      "pick": 2,
+      "gold": 2,
+      "correct": true
+    },
+    {
+      "template": "buttons",
+      "extra": 3,
+      "n_cand": 4,
+      "pick": 3,
+      "gold": 3,
+      "correct": true
+    },
+    {
+      "template": "cards",
+      "extra": 0,
+      "n_cand": 3,
+      "pick": 0,
+      "gold": 0,
+      "correct": true
+    },
+    {
+      "template": "cards",
+      "extra": 0,
+      "n_cand": 3,
+      "pick": 1,
+      "gold": 1,
+      "correct": true
+    },
+    {
+      "template": "cards",
+      "extra": 0,
+      "n_cand": 3,
+      "pick": 2,
+      "gold": 2,
+      "correct": true
+    },
+    {
+      "template": "cards",
+      "extra": 3,
+      "n_cand": 3,
+      "pick": 0,
+      "gold": 0,
+      "correct": true
+    },
+    {
+      "template": "cards",
+      "extra": 3,
+      "n_cand": 3,
+      "pick": 1,
+      "gold": 1,
+      "correct": true
+    },
+    {
+      "template": "cards",
+      "extra": 3,
+      "n_cand": 3,
+      "pick": 2,
+      "gold": 2,
+      "correct": true
+    },
+    {
+      "template": "mixed",
+      "extra": 0,
+      "n_cand": 3,
+      "pick": 0,
+      "gold": 0,
+      "correct": true
+    },
+    {
+      "template": "mixed",
+      "extra": 0,
+      "n_cand": 3,
+      "pick": 1,
+      "gold": 1,
+      "correct": true
+    },
+    {
+      "template": "mixed",
+      "extra": 0,
+      "n_cand": 3,
+      "pick": 2,
+      "gold": 2,
+      "correct": true
+    },
+    {
+      "template": "mixed",
+      "extra": 3,
+      "n_cand": 3,
+      "pick": 0,
+      "gold": 0,
+      "correct": true
+    },
+    {
+      "template": "mixed",
+      "extra": 3,
+      "n_cand": 3,
+      "pick": 1,
+      "gold": 1,
+      "correct": true
+    },
+    {
+      "template": "mixed",
+      "extra": 3,
+      "n_cand": 3,
+      "pick": 2,
+      "gold": 2,
+      "correct": true
+    }
+  ]
+}
