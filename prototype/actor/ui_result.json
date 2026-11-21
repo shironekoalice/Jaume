@@ -1,0 +1,23 @@
+{
+  "full": {
+    "top1": 1.0,
+    "params": 258417
+  },
+  "no_screen": {
+    "top1": 1.0,
+    "params": 108057
+  },
+  "no_crop": {
+    "top1": 1.0,
+    "params": 176793
+  },
+  "no_box": {
+    "top1": 1.0,
+    "params": 257905
+  },
+  "text_only": {
+    "top1": 0.16625,
+    "params": 25921
+  },
+  "latency_ms_per_decision_bs1": 40.26388168334961
+}

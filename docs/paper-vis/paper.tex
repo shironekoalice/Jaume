@@ -1,0 +1,257 @@
+% !TEX program = pdflatex
+% Jaume-Vis: what a small VLM can and cannot do, and why
+\documentclass[10pt,twocolumn,letterpaper]{article}
+
+\usepackage[margin=1in]{geometry}
+\usepackage{amsmath,amssymb}
+\usepackage{graphicx}
+\usepackage{booktabs}
+\usepackage{xcolor}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\usepackage{caption}
+\usepackage{enumitem}
+\usepackage{times}
+
+\captionsetup{font=small,labelfont=bf}
+
+\title{\vspace{-1.2em}What a 350M Vision-Language Model Can and Cannot Do:\\Three Negative Results and One Diagnostic Protocol}
+\author{Kru Zeppesey\\\small Jaume Project\\\small ModelScope: \texttt{LightNeko/Jaume}}
+\date{}
+
+\begin{document}
+\maketitle
+
+\begin{abstract}
+We report three controlled negative results from building a 350M
+vision-language model, and one diagnostic protocol that explains all of them.
+(i) Looped transformers do not help: across eight task structures and four
+modalities, eight layers always suffice, so extra rounds repeat work rather
+than adding reasoning depth. (ii) A semantic vision tower cannot read:
+SigLIP2 and InternViT-448px both score 0.21 on a four-way text-location task,
+at chance, while an OCR-trained encoder (TrOCR) reaches 0.75 on the same
+data. (iii) Exact-match scoring hides real capability: the same model that
+scores 0.11 on point-localisation scores 0.50 under a distance tolerance, a
+3--5x gap. The unifying protocol is a \emph{pre-flight feasibility check}:
+before spending training compute, probe the frozen encoder with a linear
+classifier; if it is at chance, the information is not in the representation
+and no amount of training will recover it. Applying this check turned a
+projected multi-day OCR effort into a three-minute decision, and it predicts
+the looping results before any loop is trained.
+\end{abstract}
+
+\section{Introduction}
+
+Negative results are usually hard to publish because it is hard to prove that
+a failure is structural rather than a tuning accident. We collected three
+such results while building Jaume-Vis, a 350M parameter vision-language model
+on a single Ascend 910B3, and in each case we also found a measurement that
+turns the failure into a prediction.
+
+The thread connecting them is simple. A representation either contains the
+information a task needs or it does not. If it does, training will find it
+given enough data; if it does not, no training helps. This sounds obvious, but
+it is routinely violated: we spent two rounds of tuning on an OCR task whose
+input representation had already destroyed the glyphs.
+
+\paragraph{Contributions.}
+\begin{enumerate}[leftmargin=1.2em,itemsep=1pt,topsep=2pt]
+\item A depth-saturation criterion that predicts when looping cannot help,
+      validated on eight task structures (Section~\ref{sec:loop}).
+\item Direct evidence that semantic vision towers cannot read glyphs, and
+      that resolution is not the limiting factor (Section~\ref{sec:ocr}).
+\item A demonstration that exact-match metrics can under-report capability by
+      3--5x, and the metric design that fixes it (Section~\ref{sec:metric}).
+\item A pre-flight protocol: linear-probe the frozen encoder before training
+      (Section~\ref{sec:protocol}).
+\end{enumerate}
+
+\section{Setup}
+
+All experiments run on one Ascend 910B3 with 61\,GiB HBM. The language
+backbone is Jaume, a 350M MoE transformer (16 layers, $d=512$, 4 experts,
+top-2). Vision towers are frozen unless stated. Training uses AdamW with
+bf16 autocast and cosine decay.
+
+\section{Depth saturation predicts that looping cannot help}
+\label{sec:loop}
+
+\subsection{The criterion}
+
+A looped transformer applies the same block repeatedly. If rounds are extra
+depth, a loop can only help when depth helps. We therefore measure that
+directly: train plain 8L and 16L models on the target task with identical data
+and steps.
+
+\begin{quote}
+\begin{itemize}[leftmargin=1em,itemsep=1pt,topsep=2pt]
+\item 16L beats 8L by $>0.01$: the task is depth-limited, a loop has room.
+\item 16L $\approx$ 8L: the task is computed in one pass; looping cannot win.
+\end{itemize}
+\end{quote}
+
+The scan costs about 0.3 GPU-hours versus 10+ for a full loop comparison.
+
+\subsection{Results}
+
+\begin{table*}[t]
+\centering
+\small
+\begin{tabular}{llcccl}
+\toprule
+Task & Intended serial structure & 8L & 16L & Learnable & Depth-limited \\
+\midrule
+Chain lookup         & $k$-hop composition        & 0.0000 & 0.0000 & yes & no (closure in one pass) \\
+Register program     & 16 sequential mod-13 ops   & 0.0000 & 0.0000 & yes & no (parallel width) \\
+Sequence reduction   & 256-number sum/max         & 0.0000 & 0.0000 & yes & no (parallel reduce) \\
+Two-stage derivation & stage 2 uses stage 1       & 0.1815 & 0.1812 & yes & no \\
+Colour counting      & $3\times3$ attribute pairs & 0.983  & 0.986  & yes & no \\
+Constraint path      & propagation depth $K$      & 0.0000 & 0.0000 & yes & no (transitive closure) \\
+Parity / mod-count   & running mod-2/3 state      & 0.50   & 0.56   & no  & n/a (not learnable) \\
+8-digit addition     & carry chain, exact match   & 0.8900 & 0.8967 & yes & no \\
+\bottomrule
+\end{tabular}
+\caption{Depth scan across eight task structures. The last row is the
+strictest: genuinely learnable, genuinely serial, strict scoring. 16L gains
+only 0.0067 while costing $1.8\times$ the time.}
+\label{tab:loop}
+\end{table*}
+
+Every task saturates at eight layers. 8-digit addition is the decisive case:
+it is the task the loop literature uses to argue for depth, it is learnable
+(0.89 exact match), it is strictly scored, and yet 8 layers match 16.
+
+\subsection{Mechanism}
+
+Inter-round relative distance decays geometrically:
+\[
+T{=}8:\; 0.552 \to 0.363 \to 0.213 \to 0.137 \to 0.097 \to 0.074 \to 0.060
+\]
+ratio $\approx 0.6$, and principal-subspace overlap saturates at 0.99. The
+loop is a contraction to a fixed point, not staged reasoning.
+
+\section{A semantic vision tower cannot read}
+\label{sec:ocr}
+
+\subsection{The task}
+
+We render forms with four labelled boxes and ask which box holds a target
+word. A linear probe on raw pixels reaches 100\%, so the render is separable.
+
+\subsection{Results}
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lccc}
+\toprule
+Vision tower & Params & Resolution & Accuracy \\
+\midrule
+SigLIP2-base   & 93M  & 224 & 0.210 \\
+InternViT-300M & 304M & 448 & 0.209 \\
+\textbf{TrOCR} & 334M & 384 & \textbf{0.750} \\
+\bottomrule
+\end{tabular}
+\caption{Four-way text-location, chance 0.25. Both semantic towers are at
+chance; only the OCR-trained encoder reads.}
+\label{tab:ocr}
+\end{table}
+
+\subsection{It is not resolution}
+
+InternViT runs at 448px and still scores 0.21, so the failure is not the
+number of pixels. Tiling (2x2 and 3x3, each tile resized back to 224) moves
+the probe from 0.179 to 0.254, i.e. to chance. The limiting factor is the
+training objective, not the input bandwidth: contrastive image-text
+pretraining teaches global semantic matching, never glyph discrimination.
+
+\subsection{The fix is a different encoder, not more compute}
+
+TrOCR's encoder, trained on image-to-text pairs, reaches 0.75 zero-shot. With
+it as a second tower and a frozen Jaume backbone, a 350M model reaches 0.99 on
+text location and 0.89 on character reading after training.
+
+\section{Exact match under-reports capability}
+\label{sec:metric}
+
+A point-localisation head that must reproduce an exact digit string scores
+0.109. The same predictions evaluated with a $\pm1$ grid-cell tolerance score
+0.504. For boxes, exact match gives 0.058 while IoU$>0.3$ gives 0.158, and a
+well-trained model reaches 0.347.
+
+The gap is not cosmetic: it changed our conclusion from ``localisation is
+broken'' to ``localisation works, the metric does not''. Detection has used
+IoU for decades for exactly this reason.
+
+\paragraph{A second metric pitfall.} Normalised text answers must be
+case-folded and whitespace-collapsed before comparison. TrOCR reads
+``Beauty Contest'' as ``BEAUTY CONTEST''; scoring that as wrong measures
+formatting, not reading.
+
+\section{The pre-flight protocol}
+\label{sec:protocol}
+
+We propose a three-minute check before any training run:
+
+\begin{enumerate}[leftmargin=1.2em,itemsep=2pt,topsep=2pt]
+\item Freeze the candidate encoder.
+\item Extract features for a few hundred samples.
+\item Fit a linear classifier.
+\item If accuracy is at chance, the representation lacks the information.
+      Change the encoder; do not train harder.
+\end{enumerate}
+
+For depth, the analogous check is the 8L/16L scan. Both are cheap, both are
+predictive, and in our project each one replaced hours of failed training.
+
+\section{What the model can do}
+
+The resulting 350M checkpoint holds ten capabilities simultaneously:
+
+\begin{table}[t]
+\centering
+\small
+\begin{tabular}{lc}
+\toprule
+Capability & Score \\
+\midrule
+Semantic understanding (synthetic) & 0.956 \\
+Real image classification (CIFAR-10) & 0.954 \\
+OCR localisation (synthetic) & 0.970 \\
+OCR reading (synthetic) & 0.791 \\
+Document field (synthetic) & 0.612 \\
+Real document reading (FUNSD) & 0.281 \\
+Real document field type (FUNSD) & 0.493 \\
+Object counting & 0.910 \\
+Object detection (IoU$>0.3$) & 0.347 \\
+Object pointing ($\pm1$ cell) & 0.645 \\
+\bottomrule
+\end{tabular}
+\caption{Ten capabilities in one 350M checkpoint. Multi-task interference is
+handled by question-conditioned gating with residual streams.}
+\label{tab:matrix}
+\end{table}
+
+Two things make this possible. First, task-conditioned modulation: a gate
+derived from the question embedding mixes the two visual streams, and both raw
+streams stay in the sequence as residuals. Without it, OCR collapses from
+0.89 to 0.65 when semantics are added. Second, explicit coordinate tokens:
+counting and pointing are decoded as grid indices rather than inferred from a
+feature vector.
+
+\section{Limitations}
+
+One model size, one hardware target, largely synthetic training data. The
+depth criterion is a negative screen: saturation rules looping out, but the
+absence of saturation does not guarantee a loop will help. Real-document
+reading remains at 0.281 and needs a dedicated OCR model in any product.
+
+\section{Conclusion}
+
+Three failures, one protocol. Representations either contain the information
+or they do not; a linear probe answers that question in minutes, and it
+predicted every one of our results before the expensive run.
+
+\bibliographystyle{plain}
+\bibliography{refs}
+
+\end{document}

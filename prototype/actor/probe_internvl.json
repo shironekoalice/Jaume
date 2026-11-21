@@ -1,0 +1,5 @@
+{
+  "internvl2_1b": {
+    "error": "ValueError: Unrecognized configuration class <class 'transformers_modules.OpenGVLab__InternVL2_hyphen_1B.configuration_internvl_chat.InternVLChatConfig'> for this kind of A"
+  }
+}

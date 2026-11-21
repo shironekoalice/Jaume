@@ -1,0 +1,53 @@
+==================== MiniCPM-o ====================
+- **📱 The first open-source MoE to run smoothly on-device without compromising performance.** Powered by the latest [Lookahead Expert Scheduling (LES)](https://
+MiniCPM-o 4.5 is the latest model in the MiniCPM-o series, a **9B end-to-end omnimodal model**. It can continuously receive video and audio while generating spe
+- **🎙 Strong speech capability.** It supports bilingual real-time speech conversation with configurable voices in English and Chinese, making conversations **mo
+- **🎬 Full-duplex, proactive live interaction.** It process real-time, continuous video and audio input streams simultaneously while generating concurrent text 
+<td>Visual understanding, speech understanding and generation</td>
+<td>Mixed 4×/16× visual token compression; smooth on-device inference without compromising performance</td>
+<td>Full-duplex multimodal live streaming, receiving audio and video while generating speech and text</td>
+- **2026-05-11** · Released [MiniCPM-V 4.6](./docs/minicpm_v4dot6_en.md), with mixed 4×/16× visual token compression and mobile deployment support.
+
+==================== MiniMind-o ====================
+或许 GPT-4o 让人第一次感受到足够自然的流式语音交互形态，随后 Mini-Omni2、Moshi、GLM-4-Voice、Qwen3-Omni 等开源工作陆续出现。但如果目标不是直接调用这些参数庞大的现成权重，而是从 0 读懂、训练、改动一个完整 Omni 模型，开源社区仍然急缺足够轻量、链路完整的起点。要把语音
+MiniMind-O 尝试补上已知的空位：让语音和文本在 hidden state 层面直接连通，在主 backbone 仅 0.1B 的规模下保留端到端 Omni 链路。Talker 侧采用 MTP（Multi-Token Prediction）一次预测多层 Mimi codes，再配合 VAD 支持实时打断与近似双
+- 提供完整的 MiniMind-O 结构代码：Thinker、独立 Talker、audio / vision projector、Mimi codebook 接口以及 MTP audio head。
+- 关键模块均从 0 用 PyTorch 原生实现，不依赖三方高层封装；同时兼容 `transformers` Tokenizer 与原生权重格式。
+- 语音 / 视觉特征分别由冻结的 SenseVoice-Small 与 SigLIP2 编码，再通过两层 MLP projector 注入 MiniMind 隐空间
+- 内置 5 个 voice prompt + 7 个 unseen voice prompt，提供音色克隆与电话模式 WebUI
+# 下载 SenseVoice-Small 语音编码器到 ./model/SenseVoiceSmall
+modelscope download --model gongjy/SenseVoiceSmall --local_dir ./model/SenseVoiceSmall
+│   ├── SenseVoiceSmall/
+CUDA_VISIBLE_DEVICES=0 torchrun --master_port 29560 --nproc_per_node 1 train_sft_omni.py --learning_rate 5e-4 --data_path ../dataset/sft_a2a_mini.parquet --epoc
+MiniMind-O 的主体由 Thinker 和 Talker 两条路径组成。Thinker 负责理解文本、语音和图像输入，并生成语义层面的文本回复；Talker 则在 Thinker 给出的语义条件上，通过 MTP 同步预测多层 Mimi audio codes，最后由音频解码器还原成流式语音。这样做的目的不是把 
+文本输入直接进入语言主干；语音和图像分别经过 Audio Encoder 与 Vision Encoder 提取特征，再映射到 MiniMind 的隐空间中。音色信息由 Speaker Encoder 或参考音频 codes 提供，推理时可以配合 VAD 实现边听边答、实时打断和近似双工交互。更细的 projector
+![](./images/input_token_layout.jpg)
+图中展示了文本 token、语音特征、图像特征和音色条件在输入序列中的布局方式。
+Thinker 负责统一接收文本、语音和图像信息，并生成语义层面的文本回复。文本 token 直接进入语言主干，语音和图像特征则通过对应 projector 注入到占位符位置，使不同模态最终落到同一条序列中建模。
+Thinker 向 Talker 传递的表征取自中间层，而不是 embedding 层或最后一层。embedding 层语义信息不足，最后一层又更贴近 next-token prediction 目标；中间层通常已经融合了上下文和跨模态信息，同时还没有被 LM head 过度塑形，更适合作为语音生成的条件。默认 `br
+Talker 负责把 Thinker 给出的语义状态转成 8 层 Mimi codebook 序列。这里采用 MTP 形式同时预测多个 audio codebook，而不是把每层 codebook 拆成独立的长链路；为了控制 0.1B 模型中的额外参数量，音频 embedding 和输出 head 采用共享主体加轻量 
+MiniMind-O 将文本 token 与 8 路 audio-code stream 放在同一个训练样本中：Thinker 负责文本序列，Talker 负责音频 code 序列，语音、图像和音色条件都通过占位符或 reference codes 注入。回复开始之后才计算目标文本和目标音频的损失，因此 referen
+流式生成时，模型一边产生文本 token，一边通过 MTP 和延迟调度补齐 8 层 Mimi codes。Mimi 解码器可以增量恢复 24 kHz 波形，因此语音播放不必等待完整回答结束。
+音色控制采用 in-context voice cloning 的方式完成：参考音频先被编码成 voice prompt，作为上下文条件喂给 Talker，而不是通过微调权重或改写文本 prompt 来指定音色。模型也可以同时使用 speaker embedding 提供更稳定的说话人约束；推理时更换音色只需要替换这些
+默认 release 带有 5 个内置 voice prompt（dylan、eric、serena、uncle_fu、vivian），另保留 7 个 unseen prompt 用于评估（arthur、chelsie、cherry、ethan、jennifer、momo、moon）。
+MiniMind-O 所说的 0.1B，指 Thinker、Talker 和两路 projector 组成的可训练主体；落到具体发布版本上，`minimind-3o` 约 113M，`minimind-3o-moe` 约 315M。Audio Encoder、Vision Encoder 和 Speech Codec 
+| Audio projector | `MMAudioProjector` | 512 → 768 | trainable, 0.99M |
+| Audio encoder | SenseVoice-Small | 16 kHz speech features | frozen, 234.00M |
+| Vision encoder | SigLIP2 base-p32-256 | 256×256 image, 64 tokens | frozen, 94.55M |
+| Speech codec | Mimi | 8 codebooks, 12.5 Hz, 24 kHz | frozen, 96.15M |
+所有语音数据都统一转成 Mimi codes 存储，8 层 codebook，帧率 12.5 Hz；图像统一 resize 到 256×256，由 SigLIP2 P32 编码为 64 个 patch token。训练数据主要来自公开 omni / speech instruction 数据，包括 [VoiceAssi
+其中 T2A 表示 Text-to-Audio，A2A 表示 Audio-to-Audio，I2T 表示 Image-to-Text。
+- `sft_a2a`：再接入语音输入，使模型从 speech instruction 进入同一套 Thinker–Talker 回复链路；
+训练模式里，`all` 会更新 MiniMind / Talker / projector，`audio_proj` 和 `vision_proj` 只用于单独对齐对应投影层；SenseVoice-Small、SigLIP2 和 Mimi 始终冻结。Dense 与 MoE 版本沿用同一套数据顺序。mini 命令只用于快
+所以这里无法追求综合榜单，而是落实到几项更可复现的局部评估和 use cases：Talker hidden size 消融、音色克隆相似度、相同问题和相同 ASR 流程下的 CER / WER 对比，以及 A2A、I2A 和实时交互样例。CER / WER 主要用来观察文本一致性，音质、自然度和人类偏好则留给定性样例
+如果只看语音生成，Talker 做到 1024 / 2048 维、或者继续加深层数一定会更稳。但 MiniMind-O 要把完整 Omni 链路压在 0.1B 左右，不能把大部分参数都交给声学端。Thinker / Talker 解耦后，语言理解和跨模态融合主要由 Thinker 承担，Talker 只在语义条件上渲染
+下面的 CAM++ speaker embedding 余弦相似度只作为自动化参考：Seen 组来自 `voices.pt` 中 5 个内置音色，Unseen 组来自 `voices_unseen.pt` 中 7 个训练时未见过的音色；每个音色使用同一组文本问题，只替换音色条件。
+这里选了 20 个英文问题，并统一加上 `Answer briefly in one short sentence` 约束。这样做不是为了考察开放式英文能力，而是尽量把回答长度压到同一范围内；三套模型生成音频后，再统一用 Qwen3-ASR 转写，并与目标文本计算 CER / WER，用来比较 Talker 的文本一致
+![](./images/image2audio_qualitative.jpg)
+当前模型和大规模 Omni 系统在各方面仍有差距，这一点不需要回避。长语音自然度、复杂视觉推理、开放式英文中长回答和音色稳定性，都还不是它擅长的区间。视觉路径更接近紧凑的 vision-to-speech 链路，MoE 版本也更像一次容量分配实验，而不是同算力最优解。
+话说回来，MiniMind-O 的价值也正在这里。它把一个完整 Omni 闭环压到 0.1B 量级，并把代码、权重和主要训练数据放在同一个可检查对象里；这意味着它不只是一个 demo，而是一个足够小、足够透明、可以从头复现和继续改造的基线。对于想理解 Thinker–Talker 解耦、MTP codebook int
+- [SenseVoice](https://arxiv.org/abs/2407.04051)（组件）
+<source media="(prefers-color-scheme: dark)" srcset="https://api.star-history.com/chart?repos=jingyaogong/minimind-o&type=date&theme=dark&legend=top-left&sealed
+<source media="(prefers-color-scheme: light)" srcset="https://api.star-history.com/chart?repos=jingyaogong/minimind-o&type=date&legend=top-left&sealed_token=lCl
+<img alt="Star History Chart" src="https://api.star-history.com/chart?repos=jingyaogong/minimind-o&type=date&legend=top-left&sealed_token=lCladc7VoiGUamKN6pF8i2
+title   = {MiniMind-O Technical Report: An Open Small-Scale Speech-Native Omni Model},

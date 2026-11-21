@@ -1,0 +1,22 @@
+{
+  "full": {
+    "top1": 1.0,
+    "params": 258417
+  },
+  "no_screen": {
+    "top1": 1.0,
+    "params": 108057
+  },
+  "no_crop": {
+    "top1": 1.0,
+    "params": 176793
+  },
+  "no_box": {
+    "top1": 0.548,
+    "params": 257905
+  },
+  "text_only": {
+    "top1": 0.166,
+    "params": 25921
+  }
+}

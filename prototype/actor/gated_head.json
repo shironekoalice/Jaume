@@ -1,0 +1,8 @@
+{
+  "held_out_top1": 0.7093023255813954,
+  "floor": 0.16666666666666666,
+  "params": 2439169,
+  "train_samples": 4540,
+  "test_samples": 2064,
+  "ckpt": "gated_head.pt"
+}

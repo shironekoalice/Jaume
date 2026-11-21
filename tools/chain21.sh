@@ -1,0 +1,29 @@
+#!/bin/bash
+SNAP=/home/developer/.cache/modelscope/models/LightNeko--Jaume/snapshots/master
+B=/mnt/workspace/output/350m-causal-mlm/final
+CFG=$SNAP/code/repo/configs/jaume-350m-causal.json
+OUT=/mnt/workspace/output
+cd "$SNAP/code/repo" || exit 1
+run () {
+  local name=$1; shift
+  echo "=== [$name] $(date +%H:%M:%S) ==="
+  python -u scripts/train_lm_derive.py --config $CFG --init-from $B \
+    --n-tasks 12000 --chain-len 4 --n-items 12 --n-slots 4 \
+    --epochs 3 --batch-size 24 --grad-accum 2 --lr 3e-4 \
+    --max-length 256 --val-docs 256 --eval-every 200 --log-every 50 \
+    --output $OUT/deriveC-$name --device npu "$@" \
+    2>&1 | tee $OUT/deriveC-$name.log | grep -aE '\[dp\] (VAL|FINAL|params|train=)'
+  echo "=== [$name] rc=${PIPESTATUS[0]} $(date +%H:%M:%S) ==="
+}
+echo '=== SMOKE chain4 depth8 ==='
+python -u scripts/train_lm_derive.py --config $CFG --init-from $B \
+  --n-tasks 64 --chain-len 4 --n-items 12 --n-slots 4 --depth 8 \
+  --epochs 1 --batch-size 8 --grad-accum 1 --max-length 256 \
+  --val-docs 32 --eval-every 10 --log-every 5 \
+  --output $OUT/deriveC-smoke --device npu > $OUT/deriveC-smoke.log 2>&1
+rc=$?; tail -10 $OUT/deriveC-smoke.log
+if [ $rc -ne 0 ]; then echo "=== SMOKE FAILED rc=$rc ==="; exit 1; fi
+echo '=== SMOKE OK ==='
+run L8 --depth 8
+run L16 --depth 16
+echo "=== ALL DONE $(date +%H:%M:%S) ==="

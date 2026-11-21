@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "backbone": "qwen3vl_2b",
+    "ocr_exact": 0.875,
+    "task_top1": 1.0,
+    "floor": 0.125,
+    "n_crops_read": 16,
+    "n_tasks": 14,
+    "ms_per_page": [
+      15739.323377609253,
+      11848.324060440063
+    ],
+    "ms_per_crop": 862.1139824390411
+  },
+  "dump": [
+    {
+      "dom": [
+        "",
+        "Action 0",
+        "Action 1",
+        "Action 2",
+        "Action 3",
+        "Action 4",
+        "Action 5",
+        "Action 6"
+      ],
+      "ocr": [
+        "Search",
+        "Action 0",
+        "Action 1",
+        "Action 2",
+        "Action 3",
+        "Action 4",
+        "Action 5",
+        "Action 6"
+      ]
+    },
+    {
+      "dom": [
+        "",
+        "Action 0",
+        "Action 1",
+        "Action 2",
+        "Action 3",
+        "Action 4",
+        "Action 5",
+        "Action 6"
+      ],
+      "ocr": [
+        "Search",
+        "Action 0",
+        "Action 1",
+        "Action 2",
+        "Action 3",
+        "Action 4",
+        "Action 5",
+        "Action 6"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "per_seed": [
+    {
+      "agent": 1.0,
+      "goal": 1.0,
+      "wall": 1.0,
+      "success": 1.0,
+      "ticks": 5.9,
+      "seed": 0
+    },
+    {
+      "agent": 1.0,
+      "goal": 1.0,
+      "wall": 1.0,
+      "success": 1.0,
+      "ticks": 5.9,
+      "seed": 1
+    },
+    {
+      "agent": 1.0,
+      "goal": 1.0,
+      "wall": 1.0,
+      "success": 1.0,
+      "ticks": 5.9,
+      "seed": 2
+    }
+  ],
+  "agent": {
+    "mean": 1.0,
+    "min": 1.0
+  },
+  "goal": {
+    "mean": 1.0,
+    "min": 1.0
+  },
+  "wall": {
+    "mean": 1.0,
+    "min": 1.0
+  },
+  "closed_loop": {
+    "mean": 1.0,
+    "min": 1.0
+  }
+}

@@ -1,0 +1,26 @@
+{
+  "D0_train_dist": {
+    "success": 0.89,
+    "ticks": 7.61
+  },
+  "D1_dense_p32": {
+    "success": 0.85,
+    "ticks": 8.34
+  },
+  "D2_sparse_p12": {
+    "success": 0.965,
+    "ticks": 6.255
+  },
+  "D3_grid12": {
+    "success": 0.01,
+    "ticks": 47.535
+  },
+  "D4_thick_walls": {
+    "success": 0.89,
+    "ticks": 7.65
+  },
+  "D5_shift_palette": {
+    "success": 0.875,
+    "ticks": 8.09
+  }
+}

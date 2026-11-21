@@ -1,0 +1,8 @@
+{
+  "held_out_top1": 0.24757281553398058,
+  "floor": 0.125,
+  "epochs": 12,
+  "train_samples": 5792,
+  "test_samples": 1030,
+  "trainable_params": 2439169
+}

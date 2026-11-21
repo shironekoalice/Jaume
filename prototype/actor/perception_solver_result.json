@@ -1,0 +1,16 @@
+{
+  "detector": {
+    "agent_acc": 0.99625,
+    "goal_acc": 0.99625,
+    "wall_cell_acc": 1.0
+  },
+  "pipeline": {
+    "success_detected": 0.99,
+    "success_oracle_map": 1.0,
+    "ticks_detected": 6.095,
+    "ticks_oracle": 5.915
+  },
+  "detect_latency_ms": 9.852715999986685,
+  "decisions_per_s": 101.49485684976116,
+  "params": 17015168
+}

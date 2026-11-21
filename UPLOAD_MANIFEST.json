@@ -1,0 +1,133 @@
+{
+  "staged_files": 203,
+  "staged_mb": 262.67,
+  "skipped_files": 25,
+  "skipped_gb": 28.544,
+  "skipped": [
+    {
+      "path": "350m-decision-v2\\pytorch_model.bin",
+      "bytes": 1169733171,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "350m-mlm\\pytorch_model.bin",
+      "bytes": 1167597947,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "350m-mlm-v2\\pytorch_model.bin",
+      "bytes": 1167597947,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "350m-stage2\\pytorch_model.bin",
+      "bytes": 1167597947,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "350m-stage2-ml\\pytorch_model.bin",
+      "bytes": 1167597947,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "350m-stage3\\pytorch_model.bin",
+      "bytes": 1167597947,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "350m-stage3-ml\\pytorch_model.bin",
+      "bytes": 1167597947,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "data\\mlm_corpus.jsonl",
+      "bytes": 477110976,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B0-mean-s1\\final\\pytorch_model.bin",
+      "bytes": 1167595166,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B0-mean-s2\\final\\pytorch_model.bin",
+      "bytes": 1167595166,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B0-mean-s3\\final\\pytorch_model.bin",
+      "bytes": 1167595166,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B1-cls-s1\\final\\pytorch_model.bin",
+      "bytes": 1167595166,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B1-cls-s2\\final\\pytorch_model.bin",
+      "bytes": 1167595166,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B1-cls-s3\\final\\pytorch_model.bin",
+      "bytes": 1167595166,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B2-attention-s1\\final\\pytorch_model.bin",
+      "bytes": 1167597538,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B2-attention-s2\\final\\pytorch_model.bin",
+      "bytes": 1167597538,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B2-attention-s3\\final\\pytorch_model.bin",
+      "bytes": 1167597538,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B2mlp-attnmlp-s1\\final\\pytorch_model.bin",
+      "bytes": 1171809650,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B2mlp-attnmlp-s2\\final\\pytorch_model.bin",
+      "bytes": 1171809650,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B2mlp-attnmlp-s3\\final\\pytorch_model.bin",
+      "bytes": 1171809650,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B3-latent-s1\\final\\pytorch_model.bin",
+      "bytes": 1171812474,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B3-latent-s2\\final\\pytorch_model.bin",
+      "bytes": 1171812474,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\B3-latent-s3\\final\\pytorch_model.bin",
+      "bytes": 1171812474,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\E1-slots4-s1\\final\\pytorch_model.bin",
+      "bytes": 1171804282,
+      "reason": "weights/huge"
+    },
+    {
+      "path": "output\\mem\\E4-interact-s1\\final\\pytorch_model.bin",
+      "bytes": 1180223138,
+      "reason": "weights/huge"
+    }
+  ]
+}

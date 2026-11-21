@@ -1,0 +1,180 @@
+# 免费公开节点（实测可用 13 个，2026-10-23 采集）
+# 国内出口 1 个：112.132.215.108（安徽联通）
+{
+ "mixed-port": 7897,
+ "allow-lan": false,
+ "mode": "rule",
+ "log-level": "warning",
+ "dns": {
+  "enable": true,
+  "nameserver": [
+   "223.5.5.5",
+   "119.29.29.29"
+  ]
+ },
+ "proxies": [
+  {
+   "type": "vmess",
+   "server": "112.132.215.108",
+   "port": 50002,
+   "uuid": "418048af-a293-4b99-9b0c-98ca3580dd24",
+   "alterId": 64,
+   "cipher": "auto",
+   "udp": true,
+   "name": "CN-安徽联通 378ms"
+  },
+  {
+   "type": "vless",
+   "server": "18.135.33.244",
+   "port": 22223,
+   "uuid": "e4514801-0d5a-42ba-869f-39bd605aef9e",
+   "udp": true,
+   "name": "UK-伦敦 629ms"
+  },
+  {
+   "type": "trojan",
+   "server": "45.32.52.173",
+   "port": 8886,
+   "password": "e26a229d-e8f2-4ff9-8c7d-58a9d83ee437",
+   "udp": true,
+   "skip-cert-verify": true,
+   "sni": "45.32.52.173",
+   "name": "JP-东京 1218ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.27",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 1235ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.99",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 1382ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.90",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 1417ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.63",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 1495ms"
+  },
+  {
+   "type": "trojan",
+   "server": "47.250.84.25",
+   "port": 443,
+   "password": "5931134d1cde66bf83a54acdfebe7ab2",
+   "udp": true,
+   "skip-cert-verify": true,
+   "name": "MY-吉隆坡 2096ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.45",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 3005ms"
+  },
+  {
+   "type": "trojan",
+   "server": "172.66.40.99",
+   "port": 443,
+   "password": "humanity",
+   "udp": true,
+   "skip-cert-verify": true,
+   "sni": "www.trusteeforward.com",
+   "network": "ws",
+   "ws-opts": {
+    "path": "/assignment",
+    "headers": {
+     "Host": "www.trusteeforward.com"
+    }
+   },
+   "name": "CF-全球 4064ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.36",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 4539ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.54",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 4586ms"
+  },
+  {
+   "type": "ss",
+   "server": "202.50.253.18",
+   "port": 19999,
+   "cipher": "aes-256-gcm",
+   "password": "ZRpgaBeGxtENIXgvhpkZBKz9GnWRS2dYcx9O+a2iwN4=",
+   "name": "IT-米兰 4970ms"
+  }
+ ],
+ "proxy-groups": [
+  {
+   "name": "节点选择",
+   "type": "select",
+   "proxies": [
+    "CN-安徽联通 378ms",
+    "UK-伦敦 629ms",
+    "JP-东京 1218ms",
+    "IT-米兰 1235ms",
+    "IT-米兰 1382ms",
+    "IT-米兰 1417ms",
+    "IT-米兰 1495ms",
+    "MY-吉隆坡 2096ms",
+    "IT-米兰 3005ms",
+    "CF-全球 4064ms",
+    "IT-米兰 4539ms",
+    "IT-米兰 4586ms",
+    "IT-米兰 4970ms"
+   ]
+  },
+  {
+   "name": "自动选择",
+   "type": "url-test",
+   "url": "https://www.gstatic.com/generate_204",
+   "interval": 300,
+   "proxies": [
+    "CN-安徽联通 378ms",
+    "UK-伦敦 629ms",
+    "JP-东京 1218ms",
+    "IT-米兰 1235ms",
+    "IT-米兰 1382ms",
+    "IT-米兰 1417ms",
+    "IT-米兰 1495ms",
+    "MY-吉隆坡 2096ms",
+    "IT-米兰 3005ms",
+    "CF-全球 4064ms",
+    "IT-米兰 4539ms",
+    "IT-米兰 4586ms",
+    "IT-米兰 4970ms"
+   ]
+  }
+ ],
+ "rules": [
+  "MATCH,节点选择"
+ ]
+}

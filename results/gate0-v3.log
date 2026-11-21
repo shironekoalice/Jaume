@@ -1,0 +1,27 @@
+/opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/utils/_path_manager.py:66: UserWarning: Permission mismatch: The owner of /opt/buildtools/Python-3.11.4/lib/python3.11/site-packages/torch_npu/lib/libop_plugin_atb.so does not match.
+  warnings.warn(f"Permission mismatch: The owner of {path} does not match.")
+[g0] device=npu (Ascend910B3 (61.0 GiB))
+[g0] train=716 val=164 test=228
+Warning: The current version of the file storing weights is old, and it is relanded due to internal bug of torch and compatibility issue. We will deprecate the loading support for this type of file in the future, please use newer torch to re-store the weight file.
+[g0] candidate paths: 40
+/home/developer/.cache/modelscope/models/LightNeko--Jaume/snapshots/master/code/repo/jaume/modeling/moe.py:63: UserWarning: Cannot create tensor with interal format while allow_internel_format=False, tensor will be created with base format. (Triggered internally at ../torch_npu/csrc/aten/common/TensorFactories.cpp:340.)
+  output = torch.zeros_like(x_flat)
+[g0] encoded 40 paths x 3 splits in 222s
+[g0] 5x CV ranking over 40 paths in 46s
+[g0] best single path = repeat_1_3  (CV 0.4160)
+[g0] top-8 by CV: repeat_1_3(0.416), repeat_6_9(0.410), repeat_2_4(0.407), repeat_11_14(0.407), repeat_1_10(0.405), base(0.402), repeat_0_7(0.401), repeat_1_9(0.400)
+[g0] fitting final heads: 40 paths x 1 seeds
+[g0] seed 0: A=0.3489  B(top8)=0.3368  C(all 40)=0.3597  D(oracle)=0.6801  cov=0.719
+
+[g0] mean over 1 seed(s):
+[g0]   A single best fixed   = 0.3489
+[g0]   B top-K ensemble      = 0.3368   (input-blind, CV-selected)
+[g0]   C all-path ensemble   = 0.3597   (zero selection)
+[g0]   D oracle (unreachable) = 0.6801   coverage=0.719
+[g0]   D-B = +0.3432   D-C = +0.3203
+[g0] Gate 0a (D > C, oracle beats the zero-selection ensemble): PASS
+[g0] Gate 0b (D > B, oracle beats the CV-selected ensemble): PASS
+[g0] VERDICT: PASS
+
+[g0] READ THIS BEFORE QUOTING D: D picks, per sample, a path that happened to be correct, using the label. It is an upper bound and CANNOT be implemented at inference. Coverage 0.719 means 28.1% of test rows had no correct path at all, so D is capped there regardless of selector quality.
+[g0] wrote /mnt/workspace/output/gate0-v3.json

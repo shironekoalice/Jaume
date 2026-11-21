@@ -1,0 +1,9 @@
+{
+  "closed_loop_success": 0.71,
+  "mean_ticks": 10.815,
+  "latency_ms": 2.090010643005371,
+  "decisions_per_s": 478.46646300424135,
+  "epochs": 40,
+  "temp": 1.0,
+  "params": 7199636
+}

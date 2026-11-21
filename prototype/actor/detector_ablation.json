@@ -1,0 +1,232 @@
+{
+  "C1_position_only": {
+    "agent_mean": 0.3408333333333333,
+    "goal_mean": 0.3475,
+    "wall_mean": 0.5062239583333333,
+    "agent_min": 0.0075,
+    "per_seed": [
+      {
+        "agent": 0.015,
+        "goal": 0.0225,
+        "wall": 0.58203125
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 0.4247265625
+      },
+      {
+        "agent": 0.0075,
+        "goal": 0.02,
+        "wall": 0.5119140625
+      }
+    ]
+  },
+  "C2_bce_pw3": {
+    "agent_mean": 0.3408333333333333,
+    "goal_mean": 0.3475,
+    "wall_mean": 1.0,
+    "agent_min": 0.0075,
+    "per_seed": [
+      {
+        "agent": 0.015,
+        "goal": 0.0225,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.0075,
+        "goal": 0.02,
+        "wall": 1.0
+      }
+    ]
+  },
+  "C3_bce_pw1": {
+    "agent_mean": 0.3408333333333333,
+    "goal_mean": 0.3475,
+    "wall_mean": 1.0,
+    "agent_min": 0.0075,
+    "per_seed": [
+      {
+        "agent": 0.015,
+        "goal": 0.0225,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.0075,
+        "goal": 0.02,
+        "wall": 1.0
+      }
+    ]
+  },
+  "C4_wall_as_CE": {
+    "agent_mean": 0.3408333333333333,
+    "goal_mean": 0.3475,
+    "wall_mean": 1.0,
+    "agent_min": 0.0075,
+    "per_seed": [
+      {
+        "agent": 0.015,
+        "goal": 0.0225,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.0075,
+        "goal": 0.02,
+        "wall": 1.0
+      }
+    ]
+  },
+  "C5_two_stage": {
+    "agent_mean": 0.3408333333333333,
+    "goal_mean": 0.3466666666666667,
+    "wall_mean": 1.0,
+    "agent_min": 0.0075,
+    "per_seed": [
+      {
+        "agent": 0.015,
+        "goal": 0.0225,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.0075,
+        "goal": 0.0175,
+        "wall": 1.0
+      }
+    ]
+  },
+  "S_bs128": {
+    "agent_mean": 0.9891666666666667,
+    "goal_mean": 0.9825,
+    "wall_mean": 1.0,
+    "agent_min": 0.9725,
+    "per_seed": [
+      {
+        "agent": 0.9975,
+        "goal": 0.9725,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.9975,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.9725,
+        "goal": 0.975,
+        "wall": 1.0
+      }
+    ]
+  },
+  "S_bs256": {
+    "agent_mean": 0.30833333333333335,
+    "goal_mean": 0.375,
+    "wall_mean": 1.0,
+    "agent_min": 0.0825,
+    "per_seed": [
+      {
+        "agent": 0.0825,
+        "goal": 0.42,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.2975,
+        "goal": 0.5175,
+        "wall": 1.0
+      },
+      {
+        "agent": 0.545,
+        "goal": 0.1875,
+        "wall": 1.0
+      }
+    ]
+  },
+  "S_warmup": {
+    "agent_mean": 1.0,
+    "goal_mean": 0.9991666666666666,
+    "wall_mean": 1.0,
+    "agent_min": 1.0,
+    "per_seed": [
+      {
+        "agent": 1.0,
+        "goal": 0.9975,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      }
+    ]
+  },
+  "S_bs128_warmup": {
+    "agent_mean": 1.0,
+    "goal_mean": 1.0,
+    "wall_mean": 1.0,
+    "agent_min": 1.0,
+    "per_seed": [
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      }
+    ]
+  },
+  "S_bs128_warmup_e40": {
+    "agent_mean": 1.0,
+    "goal_mean": 1.0,
+    "wall_mean": 1.0,
+    "agent_min": 1.0,
+    "per_seed": [
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      },
+      {
+        "agent": 1.0,
+        "goal": 1.0,
+        "wall": 1.0
+      }
+    ]
+  }
+}

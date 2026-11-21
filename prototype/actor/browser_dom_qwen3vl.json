@@ -1,0 +1,149 @@
+{
+  "summary": {
+    "backbone": "qwen3vl_2b",
+    "top1": 0.2857142857142857,
+    "top1_no_instruction": 0.14285714285714285,
+    "floor": 0.125,
+    "K": 8,
+    "n": 14,
+    "by_kind": {
+      "text": {
+        "acc": 0.14285714285714285,
+        "n": 7
+      },
+      "visual": {
+        "acc": 0.42857142857142855,
+        "n": 7
+      }
+    },
+    "latency_ms": 16974.939499582564
+  },
+  "results": [
+    {
+      "page": 0,
+      "kind": "text",
+      "K": 8,
+      "pick": 3,
+      "gold": 1,
+      "correct": false,
+      "correct_no_instr": true
+    },
+    {
+      "page": 0,
+      "kind": "visual",
+      "K": 8,
+      "pick": 1,
+      "gold": 1,
+      "correct": true,
+      "correct_no_instr": true
+    },
+    {
+      "page": 0,
+      "kind": "text",
+      "K": 8,
+      "pick": 3,
+      "gold": 2,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "visual",
+      "K": 8,
+      "pick": 2,
+      "gold": 2,
+      "correct": true,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "text",
+      "K": 8,
+      "pick": 3,
+      "gold": 3,
+      "correct": true,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "visual",
+      "K": 8,
+      "pick": 3,
+      "gold": 3,
+      "correct": true,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "text",
+      "K": 8,
+      "pick": 3,
+      "gold": 4,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "visual",
+      "K": 8,
+      "pick": 3,
+      "gold": 4,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "text",
+      "K": 8,
+      "pick": 3,
+      "gold": 5,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "visual",
+      "K": 8,
+      "pick": 4,
+      "gold": 5,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "text",
+      "K": 8,
+      "pick": 3,
+      "gold": 6,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "visual",
+      "K": 8,
+      "pick": 1,
+      "gold": 6,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "text",
+      "K": 8,
+      "pick": 6,
+      "gold": 7,
+      "correct": false,
+      "correct_no_instr": false
+    },
+    {
+      "page": 0,
+      "kind": "visual",
+      "K": 8,
+      "pick": 2,
+      "gold": 7,
+      "correct": false,
+      "correct_no_instr": false
+    }
+  ]
+}

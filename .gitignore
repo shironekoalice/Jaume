@@ -1,0 +1,73 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+
+# Training artifacts (weights go to ModelScope, not git)
+output/
+*.bin
+*.pt
+*.safetensors
+*.ckpt
+
+# Checkpoint directories: the tokenizers and configs inside them belong to the
+# weights, which are hosted on ModelScope. Keep the code, not the checkpoints.
+350m-*/
+_stage/
+
+# Data (datasets are hosted on ModelScope; keep them out of git)
+data/
+det_train_100k.pkl
+*.parquet
+
+# Logs
+logs/
+*.log
+
+# Paper build artifacts (regenerate with docs/paper/render.py)
+docs/paper/mathjax.js
+docs/paper/paper.html
+docs/paper/_shot.html
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Temp
+*.tmp
+*.bak
+*~
+
+# NPU artifacts
+ge_check_op.json
+fusion_result.json
+extra-info/
+
+# Secrets -- NEVER commit
+.deepseek_key.json
+*.local.yaml
+free-nodes.yaml
+
+# Local ModelScope download cache
+.mscache/
+
+# --- Actor prototype (prototype/actor/) ---
+# Model weights: re-fetch with `python prototype/actor/fetch_models.py`
+# (they come from ModelScope because HuggingFace is unreachable from this host)
+prototype/actor/models/
+# Datasets: ScreenSpot / seeclick parquets, re-fetchable from ModelScope
+prototype/actor/data/
+prototype/actor/_diag/
+# Checkpoints: only the trainable heads are worth keeping, and they are small
+prototype/actor/*.pt
+
+# One-off experiment scripts and logs at the repo root
+det_abl*.log
+detect_env2.py
+gen_det2.py
+zs_qwen.py
+
+# Staging copies (a working snapshot of the tree, not the source of truth)
